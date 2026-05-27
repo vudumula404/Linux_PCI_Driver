@@ -1,0 +1,13 @@
+Start           MsgName	             Address     SubAddress    Ch A/B  WordCount/   Freq(Hz) InterMsgGap
+Minor Cycle                        Src   Dest	Src	Dest		ModeCode
+
+2               CIU1-1             11      --   04      --      A       07          6.25	10
+3		OAC1-103	   --	   11	--	01	A	04	    6.25	20
+4               CIU1-102           11      --   03      --      A       02          6.25	30
+4		CIU1_2             11      --   11      --      A       04          6.25	40
+
+
+
+
+
+

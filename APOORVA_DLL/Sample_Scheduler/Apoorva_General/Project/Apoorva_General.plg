@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Apoorva_General - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\Documents and Settings\Administrator\RSP1D.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Apoorva_General.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Apoorva_General\Apoorva_BCRTMT\Exhaustive\MemCheck.cpp"
+]
+Creating command line "cl.exe @"G:\Documents and Settings\Administrator\RSP1D.tmp"" 
+Creating command line "link.exe C:\Apoorva_General\Lib\Apoorva1553B.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/Apoorva_General.pdb" /debug /machine:I386 /out:"Debug/Apoorva_General.exe" /pdbtype:sept  .\Debug\MemCheck.obj "
+<h3>Output Window</h3>
+Compiling...
+MemCheck.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Apoorva_General.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

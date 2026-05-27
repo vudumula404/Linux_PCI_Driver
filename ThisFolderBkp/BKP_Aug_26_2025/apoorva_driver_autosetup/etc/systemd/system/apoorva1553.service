@@ -1,0 +1,12 @@
+[Unit]
+Description=Apoorva PCI MIL-STD-1553B Driver
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe ApoorvaPciDriver
+ExecStartPost=/bin/mknod -m 666 /dev/APOORVA1553 c 236 0
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

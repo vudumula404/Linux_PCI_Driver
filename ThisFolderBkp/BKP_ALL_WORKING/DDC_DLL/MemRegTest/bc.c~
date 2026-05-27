@@ -1,0 +1,187 @@
+#include <stdio.h>
+#include "/root/CCSC/CCSC-HEADER.h"
+#include "/root/CCSC/DDC_INCLUDE/PciAce.h"
+#include "/root/CCSC/DDC_INCLUDE/Pci1553.h"
+
+MSG_DEF			bc_page;
+RT_MSG			RtBuff;
+MSG_RESULT		msg_return;
+unsigned short	frame_items[10],data_buffer[40],temp_data;
+unsigned short	Temp_Buff[40];
+
+
+/*******************************************************************
+*  This Program gives code for BC and MT 
+********************************************************************/
+int main()
+{
+
+	static		int 	ASCB_FD		=	0x0;
+	int					i,Ch=0x0,TempCnt,RetVal=0x0;
+	unsigned short		Data=0x5ab6;
+	unsigned char		CardId;
+
+	ASCB_FD	=	GetDeviceHandle();
+
+	if(ASCB_FD < 0)
+	{
+		printf("\n\n\t\t!!! ERROR IN ACQUIRING DEVICE HANDLE !!!\n\n\t\tTerminating Application.\n\n");
+		return 0;
+	}
+	else
+	{
+	printf("CCSC_DEVICE OPENED\n");
+	system("clear");
+	printf("\n\t\tEnter 16-Bit Hexadecimal Data (Ex :a5a5) :");
+	scanf("%x",&Data);
+
+	printf("\n\t\tEnter Channel (CH-A:0, CH-B:1) :");
+	scanf("%x",&Ch);
+
+	RetVal	=	ClearRam();
+	printf("Retval of ClearRam is :%d\n",RetVal);
+	ResetAce(); 
+	//printf("Retval of ResetAce is :%d\n",RetVal);
+	RetVal	=	DefMode(BC);
+	printf("Retval of DefMode is :%x\n",RetVal);
+
+	/* Set up the 1553 messages and descriptor stack */
+	/* SET UP MESSAGE BLOCKS */
+	/* Broadcast Messege */	
+	getchar();
+	if(Ch	==	0)
+		bc_page.bus       = BUS_A;		
+	else if(Ch	==	1)
+		bc_page.bus       = BUS_B;		
+	bc_page.self_test     = NO;
+	bc_page.mask_bcst_bit = NO;
+	bc_page.broadcast     = NO;
+	bc_page.mode_code     = NO;
+	bc_page.rt_rt         = NO;
+	bc_page.cmd_1.taddr   = 1;
+	bc_page.cmd_1.t_r     = RECEIVE;
+	bc_page.cmd_1.status  = 0xcccc;
+	bc_page.loop          = 0x0000;
+	bc_page.cmd_1.subaddr = 1;
+	bc_page.cmd_1.wcnt    = 32;
+
+	for(i=0; i< 32; i++)
+		data_buffer[i] = Data;
+		
+	DefMsg(1,bc_page,data_buffer,32);
+
+	if(Ch	==	0)
+		bc_page.bus       = BUS_A;		
+	else if(Ch	==	1)
+		bc_page.bus       = BUS_B;		
+	bc_page.self_test     = NO;
+	bc_page.mask_bcst_bit = NO;
+	bc_page.broadcast     = NO;
+	bc_page.mode_code     = NO;
+	bc_page.rt_rt         = NO;
+	bc_page.cmd_1.taddr   = 2;
+	bc_page.cmd_1.t_r     = RECEIVE;
+	bc_page.cmd_1.status  = 0xcccc;
+	bc_page.loop          = 0x0000;
+	bc_page.cmd_1.subaddr = 1;
+	bc_page.cmd_1.wcnt    = 32;
+
+	for(i=0; i< 32; i++)
+		data_buffer[i] = ((Data << 0x1) | 0x1);
+		
+	DefMsg(2,bc_page,data_buffer,32);
+
+	/* Modecode Message (Transmit StatusWord) */
+	frame_items[0] = 1;
+	frame_items[1] = 2;
+	DefFrame(2,frame_items);
+	
+	printf("Press Any Key To Run BC\n");
+	getchar();
+
+	RunBc(STACK_1,1,2,1);/*issue start Command     (Stack,Start,NoOfMsgs,Times)*/  
+
+	printf("After RUNBC\n");
+	printf("\nFirst Message Result from BC Module");
+	getchar();
+	getchar();
+	
+	/*print Bc results */
+
+	ReadMsgResult(STACK_1,1,&msg_return);
+
+	printf("\n COMMAND WORD IS %x \n",msg_return.cmd_1);
+	printf("THE  MESSAGE WORD COUNT = %x \n",msg_return.cmd1_bits.wcnt);
+	printf("THE  MESSAGE SUBADDRESS = %x \n",msg_return.cmd1_bits.subaddr);
+	printf("THE T/R BIT OF MSG#1 IS SET TO %x \n",msg_return.cmd1_bits.t_r);
+	printf("THE  MESSAGE TADDRESS IS= %x \n",msg_return.cmd1_bits.taddr);
+	printf("\n THE STATUS BITS OF THE MESSAGE ARE AS FOLLLOWS \n");
+	printf("THE BLOCK STATUS WORD IS %x \n",msg_return.bsw);
+	printf("\nLOOP TEST FAIL     = %x\n",msg_return.bsw_bits.loop_tstfail);
+	printf("RESP TIME OUT      = %x \n",msg_return.bsw_bits.resp_timeout);
+	printf("MESSAGE FORMAT     = %x \n",msg_return.bsw_bits.msg_fmt_err);
+	printf("STATUS WORD ERROR  = %x \n",msg_return.bsw_bits.stat_wrd_err);
+	printf("ERROR FLAG         = %x \n",msg_return.bsw_bits.err_flag);
+	printf("BUS                = %x \n",msg_return.bsw_bits.bus);
+	printf("START OF MESSAGE   = %x \n",msg_return.bsw_bits.som);
+	printf("END OF MESSAGE     = %x \n",msg_return.bsw_bits.eom);
+	printf("\nDATA RECEIVED \n");
+	TempCnt= msg_return.cmd1_bits.wcnt;
+	
+	if(TempCnt == 0)
+	TempCnt = 32;
+	for(i=0;i<TempCnt;i++)
+	printf("%x ",msg_return.data[i]);
+	getchar();
+	
+	printf("\nLOOPBACK WORD      = %x \n",msg_return.loop_word);
+	printf("STATUS             = %x \n",msg_return.status_1);
+    	
+	getchar();
+
+	printf("\nSecond Message Result from BC Module");
+	ReadMsgResult(STACK_1,2,&msg_return);
+
+	printf("\n COMMAND WORD IS %x \n",msg_return.cmd_1);
+	printf("THE  MESSAGE WORD COUNT = %x \n",msg_return.cmd1_bits.wcnt);
+	printf("THE  MESSAGE SUBADDRESS = %x \n",msg_return.cmd1_bits.subaddr);
+	printf("THE T/R BIT OF MSG#1 IS SET TO %x \n",msg_return.cmd1_bits.t_r);
+	printf("THE  MESSAGE TADDRESS IS= %x \n",msg_return.cmd1_bits.taddr);
+	printf("\n THE STATUS BITS OF THE MESSAGE ARE AS FOLLLOWS \n");
+	printf("THE BLOCK STATUS WORD IS %x \n",msg_return.bsw);
+	printf("\nLOOP TEST FAIL     = %x\n",msg_return.bsw_bits.loop_tstfail);
+	printf("RESP TIME OUT      = %x \n",msg_return.bsw_bits.resp_timeout);
+	printf("MESSAGE FORMAT     = %x \n",msg_return.bsw_bits.msg_fmt_err);
+	printf("STATUS WORD ERROR  = %x \n",msg_return.bsw_bits.stat_wrd_err);
+	printf("ERROR FLAG         = %x \n",msg_return.bsw_bits.err_flag);
+	printf("BUS                = %x \n",msg_return.bsw_bits.bus);
+	printf("START OF MESSAGE   = %x \n",msg_return.bsw_bits.som);
+	printf("END OF MESSAGE     = %x \n",msg_return.bsw_bits.eom);
+	printf("\nDATA RECEIVED \n");
+	TempCnt= msg_return.cmd1_bits.wcnt;
+	
+	if(TempCnt == 0)
+	TempCnt = 32;
+	for(i=0;i<TempCnt;i++)
+	printf("%x ",msg_return.data[i]);
+	getchar();
+	
+	printf("\nLOOPBACK WORD      = %x \n",msg_return.loop_word);
+	printf("STATUS             = %x \n",msg_return.status_1);
+    	
+	getchar();
+
+
+	if(ReleaseDeviceHandle(ASCB_FD) < 0)
+	{
+		printf("\n\n\t\t!!! ERROR IN RELEASING DEVICE HANDLE !!!\n\n");
+	}
+	else
+	{
+		printf("\n\t\tDEVICE HANDLE RELEASED\n\n");
+	}
+
+	}
+	return 0;
+
+}  

@@ -1,0 +1,135 @@
+msg_num 601 Address 9dc1 CommandWord c00
+msg_num 601 Address 9dc0 ControlWord 84
+msg_num 601 Address 9dc2 def.cmd_1.wcnt 0 Loop 0
+msg_num 601 Address 9dc3 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 602 Address 9de9 CommandWord c01
+msg_num 602 Address 9de8 ControlWord 84
+msg_num 602 Address 9dea def.cmd_1.wcnt 1 Loop 0
+msg_num 602 Address 9deb (RxCmd)def.cmd_1.wcnt 1 Status cccc
+msg_num 603 Address 9e11 CommandWord c02
+msg_num 603 Address 9e10 ControlWord 84
+msg_num 603 Address 9e12 def.cmd_1.wcnt 2 Loop 0
+msg_num 603 Address 9e13 (RxCmd)def.cmd_1.wcnt 2 Status cccc
+msg_num 604 Address 9e39 CommandWord c03
+msg_num 604 Address 9e38 ControlWord 84
+msg_num 604 Address 9e3a def.cmd_1.wcnt 3 Loop 0
+msg_num 604 Address 9e3b (RxCmd)def.cmd_1.wcnt 3 Status cccc
+msg_num 605 Address 9e61 CommandWord c04
+msg_num 605 Address 9e60 ControlWord 84
+msg_num 605 Address 9e62 def.cmd_1.wcnt 4 Loop 0
+msg_num 605 Address 9e63 (RxCmd)def.cmd_1.wcnt 4 Status cccc
+msg_num 606 Address 9e89 CommandWord c05
+msg_num 606 Address 9e88 ControlWord 84
+msg_num 606 Address 9e8a def.cmd_1.wcnt 5 Loop 0
+msg_num 606 Address 9e8b (RxCmd)def.cmd_1.wcnt 5 Status cccc
+msg_num 607 Address 9eb1 CommandWord c06
+msg_num 607 Address 9eb0 ControlWord 84
+msg_num 607 Address 9eb2 def.cmd_1.wcnt 6 Loop 0
+msg_num 607 Address 9eb3 (RxCmd)def.cmd_1.wcnt 6 Status cccc
+msg_num 608 Address 9ed9 CommandWord c07
+msg_num 608 Address 9ed8 ControlWord 84
+msg_num 608 Address 9eda def.cmd_1.wcnt 7 Loop 0
+msg_num 608 Address 9edb (RxCmd)def.cmd_1.wcnt 7 Status cccc
+msg_num 609 Address 9f01 CommandWord c08
+msg_num 609 Address 9f00 ControlWord 84
+msg_num 609 Address 9f02 def.cmd_1.wcnt 8 Loop 0
+msg_num 609 Address 9f03 (RxCmd)def.cmd_1.wcnt 8 Status cccc
+msg_num 610 Address 9f29 CommandWord c00
+msg_num 610 Address 9f28 ControlWord 84
+msg_num 610 Address 9f2a def.cmd_1.wcnt 0 Loop 0
+msg_num 610 Address 9f2b (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 611 Address 9f51 CommandWord c00
+msg_num 611 Address 9f50 ControlWord 84
+msg_num 611 Address 9f52 def.cmd_1.wcnt 0 Loop 0
+msg_num 611 Address 9f53 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 612 Address 9f79 CommandWord c00
+msg_num 612 Address 9f78 ControlWord 84
+msg_num 612 Address 9f7a def.cmd_1.wcnt 0 Loop 0
+msg_num 612 Address 9f7b (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 613 Address 9fa1 CommandWord c00
+msg_num 613 Address 9fa0 ControlWord 84
+msg_num 613 Address 9fa2 def.cmd_1.wcnt 0 Loop 0
+msg_num 613 Address 9fa3 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 614 Address 9fc9 CommandWord c00
+msg_num 614 Address 9fc8 ControlWord 84
+msg_num 614 Address 9fca def.cmd_1.wcnt 0 Loop 0
+msg_num 614 Address 9fcb (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 615 Address 9ff1 CommandWord c00
+msg_num 615 Address 9ff0 ControlWord 84
+msg_num 615 Address 9ff2 def.cmd_1.wcnt 0 Loop 0
+msg_num 615 Address 9ff3 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 616 Address a019 CommandWord c00
+msg_num 616 Address a018 ControlWord 84
+msg_num 616 Address a01a def.cmd_1.wcnt 0 Loop 0
+msg_num 616 Address a01b (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 617 Address a041 CommandWord c10
+msg_num 617 Address a040 ControlWord 84
+msg_num 617 Address a042 (TxCmd)def.cmd_1.wcnt 16 def.loop 0
+msg_num 617 Address a043 (TxCmd)def.cmd_1.wcnt 16 def.status cccc
+msg_num 617 Address a044 (TxCmd)def.cmd_1.wcnt 16 Data 0
+msg_num 618 Address a069 CommandWord f811
+msg_num 618 Address a068 ControlWord 86
+msg_num 618 Address a06a (RxCmd)def.cmd_1.wcnt 17 Data 2581
+msg_num 618 Address a06b (RxCmd)def.cmd_1.wcnt 17 Loop 0
+msg_num 618 Address a06c (RxCmd)def.cmd_1.wcnt 17 Status cccc
+msg_num 619 Address a091 CommandWord c12
+msg_num 619 Address a090 ControlWord 84
+msg_num 619 Address a092 (TxCmd)def.cmd_1.wcnt 18 def.loop 0
+msg_num 619 Address a093 (TxCmd)def.cmd_1.wcnt 18 def.status cccc
+msg_num 619 Address a094 (TxCmd)def.cmd_1.wcnt 18 Data 0
+msg_num 620 Address a0b9 CommandWord c13
+msg_num 620 Address a0b8 ControlWord 84
+msg_num 620 Address a0ba (TxCmd)def.cmd_1.wcnt 19 def.loop 0
+msg_num 620 Address a0bb (TxCmd)def.cmd_1.wcnt 19 def.status cccc
+msg_num 620 Address a0bc (TxCmd)def.cmd_1.wcnt 19 Data 0
+msg_num 621 Address a0e1 CommandWord 814
+msg_num 621 Address a0e0 ControlWord 84
+msg_num 621 Address a0e2 (RxCmd)def.cmd_1.wcnt 20 Data 2582
+msg_num 621 Address a0e3 (RxCmd)def.cmd_1.wcnt 20 Loop 0
+msg_num 621 Address a0e4 (RxCmd)def.cmd_1.wcnt 20 Status cccc
+msg_num 622 Address a109 CommandWord 815
+msg_num 622 Address a108 ControlWord 84
+msg_num 622 Address a10a (RxCmd)def.cmd_1.wcnt 21 Data 2583
+msg_num 622 Address a10b (RxCmd)def.cmd_1.wcnt 21 Loop 0
+msg_num 622 Address a10c (RxCmd)def.cmd_1.wcnt 21 Status cccc
+msg_num 623 Address a131 CommandWord c00
+msg_num 623 Address a130 ControlWord 84
+msg_num 623 Address a132 def.cmd_1.wcnt 0 Loop 0
+msg_num 623 Address a133 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 624 Address a159 CommandWord c00
+msg_num 624 Address a158 ControlWord 84
+msg_num 624 Address a15a def.cmd_1.wcnt 0 Loop 0
+msg_num 624 Address a15b (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 625 Address a181 CommandWord c00
+msg_num 625 Address a180 ControlWord 84
+msg_num 625 Address a182 def.cmd_1.wcnt 0 Loop 0
+msg_num 625 Address a183 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 626 Address a1a9 CommandWord c00
+msg_num 626 Address a1a8 ControlWord 84
+msg_num 626 Address a1aa def.cmd_1.wcnt 0 Loop 0
+msg_num 626 Address a1ab (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 627 Address a1d1 CommandWord c00
+msg_num 627 Address a1d0 ControlWord 84
+msg_num 627 Address a1d2 def.cmd_1.wcnt 0 Loop 0
+msg_num 627 Address a1d3 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 628 Address a1f9 CommandWord c00
+msg_num 628 Address a1f8 ControlWord 84
+msg_num 628 Address a1fa def.cmd_1.wcnt 0 Loop 0
+msg_num 628 Address a1fb (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 629 Address a221 CommandWord c00
+msg_num 629 Address a220 ControlWord 84
+msg_num 629 Address a222 def.cmd_1.wcnt 0 Loop 0
+msg_num 629 Address a223 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 630 Address a249 CommandWord c00
+msg_num 630 Address a248 ControlWord 84
+msg_num 630 Address a24a def.cmd_1.wcnt 0 Loop 0
+msg_num 630 Address a24b (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 631 Address a271 CommandWord c00
+msg_num 631 Address a270 ControlWord 84
+msg_num 631 Address a272 def.cmd_1.wcnt 0 Loop 0
+msg_num 631 Address a273 (RxCmd)def.cmd_1.wcnt 0 Status cccc
+msg_num 632 Address a299 CommandWord c00
+msg_num 632 Address a298 ControlWord 84
+msg_num 632 Address a29a def.cmd_1.wcnt 0 Loop 0
+msg_num 632 Address a29b (RxCmd)def.cmd_1.wcnt 0 Status cccc
+

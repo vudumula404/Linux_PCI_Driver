@@ -1,0 +1,8 @@
+ASCB-APP:
+	gcc -g -c bc.c -o bc.o
+	gcc -o bc bc.o -L. -lCCSC-DLL
+
+
+
+
+	

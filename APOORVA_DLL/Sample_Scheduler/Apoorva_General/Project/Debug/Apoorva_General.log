@@ -1,0 +1,215 @@
+﻿Build started 12/13/2022 9:49:48 AM.
+     1>Project "E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Project\Apoorva_General.vcxproj" on node 2 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Touching ".\Debug\Apoorva_General.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /errorReport:prompt ..\Apoorva_BC_31RT_MT\Examples\CARD1\Three_Node_sample_codes\BCtoRT.cpp
+         BCtoRT.cpp
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87): error C2146: syntax error : missing ';' before identifier 'BOOL'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(88): error C2146: syntax error : missing ';' before identifier 'BOOL'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(88): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(88): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(89): error C2146: syntax error : missing ';' before identifier 'BOOL'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(89): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(89): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(90): error C2146: syntax error : missing ';' before identifier 'BOOL'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(90): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(90): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(91): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(91): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(91): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(92): error C2146: syntax error : missing ';' before identifier 'BOOL'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(92): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(92): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(93): error C2146: syntax error : missing ';' before identifier 'PCHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(93): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(93): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(94): error C2146: syntax error : missing ';' before identifier 'PCHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(94): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(94): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(95): error C2144: syntax error : 'void' should be preceded by ';'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(95): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(95): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(96): error C2146: syntax error : missing ';' before identifier 'UCHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(96): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(100): error C2146: syntax error : missing ';' before identifier 'USHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(100): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(100): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(101): error C2146: syntax error : missing ';' before identifier 'USHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(101): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(102): error C2146: syntax error : missing ';' before identifier 'USHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(102): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(102): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(103): error C2146: syntax error : missing ';' before identifier 'USHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(103): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(103): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(104): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(104): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(105): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(105): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(107): error C2146: syntax error : missing ';' before identifier 'UCHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(107): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(108): error C2146: syntax error : missing ';' before identifier 'UCHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(108): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(109): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(109): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(114): error C2146: syntax error : missing ';' before identifier 'BSW_BITS'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(114): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(114): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(115): error C2146: syntax error : missing ';' before identifier 'STATUS_BITS'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(115): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(115): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(116): error C2146: syntax error : missing ';' before identifier 'MSG_DEF'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(116): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(116): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(117): error C2146: syntax error : missing ';' before identifier 'CMD'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(117): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(125): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(125): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(126): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(126): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(127): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(127): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(127): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(128): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(128): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(128): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(129): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(129): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(129): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(130): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(130): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(130): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(131): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(131): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(131): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(132): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(132): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(132): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(133): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(133): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(133): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(134): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(134): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(134): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(135): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(135): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(135): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(136): error C2146: syntax error : missing ';' before identifier 'SHORT'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(136): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(137): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(137): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(137): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(138): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(138): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(138): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(139): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(139): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(139): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(140): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(140): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(140): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(141): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(141): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(141): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(142): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(142): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(142): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(143): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(143): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(143): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(144): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(144): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(144): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(145): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(145): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(145): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(150): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(150): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(150): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(151): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(151): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(151): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(152): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(152): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(152): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(153): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(153): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(153): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(154): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(154): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(154): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(155): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(155): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(155): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(156): error C2146: syntax error : missing ';' before identifier 'CHAR'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(156): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(156): error C2086: 'int EXP' : redefinition
+                 E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(87) : see declaration of 'EXP'
+     1>E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Include\Libraries.h(156): fatal error C1003: error count exceeds 100; stopping compilation
+     1>Done Building Project "E:\prasad\APOORVA-PCI-3Node CARD PINAKA 19-07\Apoorva_General\Project\Apoorva_General.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.39

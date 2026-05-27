@@ -1,0 +1,168 @@
+﻿Build started 6/11/2025 3:58:28 PM.
+     1>Project "C:\FileSchedule\FileSchedule\FileSchedule.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\FileSchedule.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\FileSchedule.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt Sample_Sdef.cpp
+         Sample_Sdef.cpp
+     1>Sample_Sdef.cpp(205): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(304) : see declaration of 'scanf'
+     1>Sample_Sdef.cpp(189): warning C4101: 'szFilenameB1' : unreferenced local variable
+     1>Sample_Sdef.cpp(287): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(307): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(311): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(279): warning C4101: 'data_buffer' : unreferenced local variable
+     1>Sample_Sdef.cpp(450): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(470): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(474): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(442): warning C4101: 'data_buffer' : unreferenced local variable
+     1>Sample_Sdef.cpp(612): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(632): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(636): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(604): warning C4101: 'data_buffer' : unreferenced local variable
+     1>Sample_Sdef.cpp(763): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(804): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(805): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(831): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(832): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(868): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(869): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(895): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(896): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(932): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(933): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(959): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(960): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(973): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1002): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1014): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1039): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1066): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1092): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1121): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1141): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1158): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(1196): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(1224): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(1256): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(1284): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(1316): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(1344): warning C4018: '<' : signed/unsigned mismatch
+     1>Sample_Sdef.cpp(1166): warning C4101: 'data_buffer' : unreferenced local variable
+     1>Sample_Sdef.cpp(1496): warning C4244: '=' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1502): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1506): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1512): warning C4244: '=' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1519): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1525): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1530): warning C4244: '=' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1537): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1543): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1559): warning C4244: '=' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1566): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1572): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1585): warning C4244: '=' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1592): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1598): warning C4244: 'argument' : conversion from 'USHORT' to 'UCHAR', possible loss of data
+     1>Sample_Sdef.cpp(1732): warning C4101: 't_r' : unreferenced local variable
+     1>Sample_Sdef.cpp(2268): warning C4800: 'unsigned short' : forcing value to bool 'true' or 'false' (performance warning)
+     1>Sample_Sdef.cpp(2275): warning C4800: 'unsigned short' : forcing value to bool 'true' or 'false' (performance warning)
+     1>Sample_Sdef.cpp(2281): warning C4800: 'unsigned short' : forcing value to bool 'true' or 'false' (performance warning)
+     1>Sample_Sdef.cpp(2290): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2288): warning C4101: 'ubyLoopCount' : unreferenced local variable
+     1>Sample_Sdef.cpp(2287): warning C4101: 'szFilenameB3' : unreferenced local variable
+     1>Sample_Sdef.cpp(2287): warning C4101: 'szFilenameB2' : unreferenced local variable
+     1>Sample_Sdef.cpp(2322): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(2343): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(2352): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2427): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(2448): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(2457): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2560): warning C4101: 'freqR1' : unreferenced local variable
+     1>Sample_Sdef.cpp(2560): warning C4101: 'freq4' : unreferenced local variable
+     1>Sample_Sdef.cpp(2560): warning C4101: 'freqR3' : unreferenced local variable
+     1>Sample_Sdef.cpp(2558): warning C4101: 'now_time' : unreferenced local variable
+     1>Sample_Sdef.cpp(2560): warning C4101: 'freqR2' : unreferenced local variable
+     1>Sample_Sdef.cpp(2557): warning C4101: 'last_call_time' : unreferenced local variable
+     1>Sample_Sdef.cpp(2671): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2672): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2673): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2669): warning C4101: 'szFileString' : unreferenced local variable
+     1>Sample_Sdef.cpp(2699): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(2716): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(2720): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2691): warning C4101: 'data_buffer' : unreferenced local variable
+     1>Sample_Sdef.cpp(2773): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(2790): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(2794): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2765): warning C4101: 'data_buffer' : unreferenced local variable
+     1>Sample_Sdef.cpp(2846): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Sample_Sdef.cpp(2863): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>Sample_Sdef.cpp(2867): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>Sample_Sdef.cpp(2838): warning C4101: 'data_buffer' : unreferenced local variable
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\FileSchedule\x64\Debug\FileSchedule.exe" /INCREMENTAL /NOLOGO Apoorva1553B.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\FileSchedule.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\FileSchedule\x64\Debug\FileSchedule.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\FileSchedule\x64\Debug\FileSchedule.lib" /MACHINE:X64 x64\Debug\FileSchedule.exe.embed.manifest.res
+         x64\Debug\Sample_Sdef.obj
+         x64\Debug\stdafx.obj
+         FileSchedule.vcxproj -> C:\FileSchedule\x64\Debug\FileSchedule.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"x64\Debug\FileSchedule.exe.embed.manifest" /manifest x64\Debug\FileSchedule.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         FileSchedule.vcxproj -> C:\FileSchedule\x64\Debug\FileSchedule.exe
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\FileSchedule.unsuccessfulbuild".
+         Touching "x64\Debug\FileSchedule.lastbuildstate".
+     1>Done Building Project "C:\FileSchedule\FileSchedule\FileSchedule.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.96

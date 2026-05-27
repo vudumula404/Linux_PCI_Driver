@@ -1,0 +1,196 @@
+Start      	Message		Message 
+Minor Cycle			Type	      Source  Destination   Sub-addr-S  Sub-addr-D	Ch A/B	No.ofWords	Frequency (Hz)
+1		SYNCA(BusA)	ModeCode 	--	31		-	31		A	1		50
+1		SYNCB(BusB)	ModeCode 	--	31		-	31		A	1		50
+1		PMC-4-A(BusA)	Broadcast	--	31		-	29		A	2		6.25
+1		PMC-4-B(BusB)	Broadcast	--	31		-	29		A	2		6.25
+1		PMCX-301	BC-RT		--	25		-	16		A	32		50
+1		PMC-108		BC-RT		--	21		-	1		A	30		50
+1		PMC-109		BC-RT		--	22		-	1		A	30		50
+1		PMCX-303	BC-RT		--	25		-	4		A	24		50
+1		PMCX-110	BC-RT		--	25		-	1		A	10		50
+1		SYS21-101	RT-BC		22	--		1	-		A	26		12.5
+1		SYS22-101	RT-BC		22	--		1	-		A	26		12.5
+1		PMCX-116	BC-RT		--	25		-	3		A	11		50
+1		SYS11-101	RT-BC		11	--		1	-		A	14		50
+1		PMC1-112	BC-RT		--	25		-	2		A	5		6.25
+1		PMCX-307A	BC-RT		--	25		-	12		A	25		25
+1		SYS05-2		RT-BC		5	--		2	-		A	4		25
+1		PMC-157		BC-RT		--	7		-	5		A	32		50
+1		BIS2X-101	RT-BC		26	--		1	-		A	24		6.25
+1		BIS22-201	RT-BC		26	--		5	-		A	1		6.25
+1		PMCX-307B	BC-RT		--	25		-	12		A	14		25
+1		SYS07-101	RT-BC		7	--		1	-		A	7		50
+1		PMC2-117	BC-RT		--	25		-	9		A	10		6.25
+1		PMC-107		BC-RT		--	15		-	6		A	4		6.25
+1		PMCX-307C	BC-RT		--	25		-	14		A	14		25
+1		PMC-113A	BC-RT		--	15		-	2		A	24		12.5
+1		PMC-154		BC-RT		--	7		-	2		A	29		50
+1		BIS2X-301	RT-BC		26	--		10	-		A	32		25
+1		PMC-101		BC-RT		--	5		-	1		A	8		6.25
+1		PMC-134		BC-RT		--	10		-	7		A	1		50
+1		PMC-120		BC-RT		--	22		-	2		A	21		25
+1		PMCX-307D	BC-RT		--	26		-	15		A	14		25
+1		PMC-153		BC-RT		--	7		-	1		A	17		50
+1		PMC-128		BC-RT		--	10		-	1		A	16		6.25
+1		BIS2X-103	RT-BC		26	--		2	-		A	11		50
+1		SYS05-3		RT-BC		5	--		11	-		A	4		6.25
+1		SYS07-2		RT-BC		7	--		11	-		A	4		6.25
+1		PMCX-308A	BC-RT		--	25		-	7		A	16		50
+1		PMCX-308B	BC-RT		--	25		-	26		A	16		50
+1		BIS2X-305A	RT-BC		26	--		18	-		A	10		50
+1		BIS2X-305B	RT-BC		26	--		19	-		A	10		50
+1		PMC2-5		BC-RT		--	26		-	5		A	1		6.25
+1		POLL-15-A(B-A)MCode(TX CMD)	--	15		-	-		A	-		6.25
+1		POLL-15-B(B-B)MCode(TX CMD)	--	15		-	-		A	-		6.25
+2		SYNCA(BusA)	ModeCode 	--	31		-	-		A	1		50
+2		SYNCB(BusB)	ModeCode 	--	31		-	-		A	1		50
+2		PMC-4-A(BusA)	Broadcast	--	31		-	29		A	2		6.25
+2		PMC-4-B(BusB)	Broadcast	--	31		-	29		A	2		6.25
+2		PMCX-301	BC-RT		--	25		-	16		A	32		50
+2		PMC-108		BC-RT		--	22		-	1		A	30		50
+2		PMC-109		BC-RT		--	22		-	1		A	30		50
+2		PMCX-303	BC-RT		--	25		-	4		A	24		50
+2		PMCX-110	BC-RT		--	25		-	1		A	10		50
+2		PMC-2		BC-RT		--	16		-	3		A	5		6.25
+2		PMC-117		BC-RT		--	15		-	1		A	24		6.25
+2		PMC-121		BC-RT		--	6		-	8		A	27		12.5
+2		PMC-156		BC-RT		--	7		-	4		A	32		12.5
+2		SYS21-104	RT-BC		22	--		6	-		A	1		6.25
+2		SYS22-104	RT-BC		22	--		6	-		A	1		6.25
+2		PMCX-306	BC-RT		--	26		-	11		A	6		12.5
+2		SYS11-102	RT-BC		11	--		3	-		A	2		6.25
+2		PMC-123		BC-RT		--	6		-	10		A	10		12.5
+2		PMC-130		BC-RT		--	13		-	7		A	12		12.5
+2		SYS16-101	RT-BC		16	--		2	-		A	32		6.25
+2		SYS15-101	RT-BC		15	--		1	-		A	19		6.25
+2		SYS06-103	RT-BC		6	--		15	-		A	26		6.25
+2		PMCX-304A	BC-RT		--	26		-	8		A	27		25
+2		SYS15-109	RT-RT		15	13		5	9		A	4		12.5
+2		PMCX-304B	BC-RT		--	26		-	10		A	27		25
+2		PMC-120A	BC-RT		--	22		-	2		A	21		25
+2		SYS13-6		RT-RT		13	15		13	3		A	24		12.5
+2		SYS15-2		RT-BC		15	--		11	-		A	9		6.25
+2		BIS21-2		RT-BC		25	--		11	-		A	27		6.25
+2		BIS22-2		RT-BC		26	--		11	-		A	27		6.25
+2		SYS06-3		RT-BC		6	--		11	-		A	4		6.25
+2		SYS10-2		RT-BC		10	--		11	-		A	4		6.25
+2		BIS2X-302A	RT-BC		26	--		8	-		A	32		6.25
+2		SYS21-107	RT-BC		22	--		8	-		A	2		25
+2		SYS22-107	RT-BC		22	--		0	-		A	2		25
+2		POLL-S06-A(BA)	MCode(TX CMD)	--	6		-	-		A	0		6.25
+2		POLL-S06-B(BB)	MCode(TX CMD)	--	6		-	-		A	0		6.25
+3		SYNCA(BusA)	MCode 		--	31		-	-		A	1		50
+3		SYNCB(BusB)	MCode 		--	31		-	-		A	1		50
+3		PMC-103		BC-RT		--	11		-	1		A	5		6.25
+3		PMCX-302	BC-RT		--	26		-	6		A	11		12.5
+3		SYS16-111	RT-BC		16	--		25	-		A	32		6.25
+3		SYS07-102	RT-BC		7	--		2	-		A	3		6.25
+3		PMC-155		BC-RT		--	7		-	3		A	32		12.5
+3		PMC-114		BC-RT		--	16		-	1		A	9		6.25
+3		SYS22-105	RT-BC		22	--		7	-		A	21		6.25
+3		SYS21-105	RT-BC		22	--		7	-		A	21		6.25
+3		SYS15-105	RT-RT		15	2	        6	11		A	19		12.5
+3		PMC-131		BC-RT		--	10		-	4		A	5		6.25
+3		PMCX-309	BC-RT		--	26		-	17		A	30		12.5
+3		PMCX-310	BC-RT		--	26		-	18		A	25		12.5
+3		POLL-SYS05-A(BA)MCode(TX CMD)	--	5		-	-		A	0		6.25
+3		POLL-SYS11-A(BA)MCode(TX CMD)	--	11		-	-		A	0		6.25
+3		POLL-SYS05-B(BB)MCode(TX CMD)	--	5		-	-		A	0		6.25
+3		POLL-SYS11-B(BB)MCode(TX CMD)	--	11		-	-		A	0		6.25
+4		SYNCA(BusA)	ModeCode 	--	31		-	-		A	1		50
+4		SYNCB(BusB)	ModeCode 	--	31		-	-		A	1		50
+4		SYS16-101A	RT-BC		16	--		1	-		A	32		6.25
+4		BIS22-1		RT-BC		26	--		4	-		A	32		6.25
+4		SYS07-103	RT-BC		7	--		3	-		A	32		6.25
+4		BIS21-1		RT-BC		25	--		4	-		A	32		6.25
+4		SYS15-104	RT-RT		15	2		10	10		A	32		6.25
+4		PMC-102		BC-RT		--	6		1	1		A	17		6.25
+4		PMC-132		BC-RT		--	10		-	5		A	9		6.25
+4		PMC-158		BC-RT		--	7		-	6		A	30		12.5
+4		PMC-160		BC-RT		--	7		-	8		A	30		6.25
+4		BIS21-4		RT-BC		25	--		3	-		A	19		6.25
+4		SYS11-2		RT-BC		11	--		11	-		A	4		6.25
+4		BIS2X-302B	RT-BC		25	--		9	-		A	32		6.25
+4		PMC-123		BC-RT		--	6		-	10		A	10		12.5
+4		SYS16-2		RT-BC		16	--		11	-		A	17		6.25
+4		POLL-SYS21-A	MCode(TX CMD)	--	22		-	-		A	0		6.25
+4		POLL-SYS22-A	MCode(TX CMD)	--	22		-	-		A	0		6.25
+4		POLL-SYS21-B	MCode(TX CMD)	--	22		-	-		A	0		6.25
+4		POLL-SYS22-B	MCode(TX CMD)	--	22		-	-		A	0		6.25
+5		SYNCA(BusA)	MCode 		--	31		-	-		A	1		50
+5		SYNCB(BusB)	MCode 		--	31		-	-		A	1		50
+5		SYS21-106	RT-BC		22	--		5	-		A	18		6.25
+5		SYS22-106	RT-BC		22	--		5	-		A	18		6.25
+5		PMC-6		BC-RT		--	6		-	2		A	30		6.25
+5		SYS15-111	RT-BC		15	--		20	-		A	32		6.25
+5		SYS15-111A	RT-BC		15	--		21	-		A	32		6.25
+5		PMC-200(PMC-125)BC-RT		--	5		-	30		A	1		6.25
+5		PMC-122		BC-RT		--	6		-	9		A	17		6.25
+5		BIS2X-303	RT-BC		26	--		6	-		A	32		6.25
+5		PMC-133		BC-RT		--	10		-	6		A	10		6.25
+5		SYS13-2		RT-BC		13	--		11	-		A	4		6.25
+5		BIS2X-304A	RT-BC		26	--		7	-		A	16		6.25
+5		BIS2X-304B	RT-BC		26	--		9	-		A	16		6.25
+5		POLL-SYS16-A	MCode(TX CMD)	--	16		-	-		A	0		6.25
+5		POLL-PMC-A	MCode(TX CMD)	--	14		-	-		A	0		6.25
+5		POLL-SYS16-B	MCode(TX CMD)	--	16		-	-		A	0		6.25
+5		POLL-PMC-B	MCode(TX CMD)	--	14		-	-		A	0		6.25
+6		SYNCA(BusA)	MCode 		--	31		-	-		A	1		50
+6		SYNCB(BusB)	MCode 		--	31		-	-		A	1		50
+6		SYS11-1		RT-BC		11	--		4	-		A	7		6.25
+6		SYS21-1		RT-BC		22	--		4	-		A	7		6.25
+6		SYS22-1		RT-BC		22	--		4	-		A	7		6.25
+6		PMC-145		BC-RT		--	16		-	4		A	2		6.25
+6		PMC-111		BC-RT		--	16		-	2		A	13		6.25
+6		SYS15-103	RT-RT		15	2		8	8		A	32		6.25
+6		PMC-124		BC-RT		--	6		-	15		A	12		6.25
+6		PMC-135		BC-RT		--	10		-	3		A	14		6.25
+6		SYS06-104	RT-BC		6	--		16	-		A	22		6.25
+6		POLL-BIS1-A(BA)	MCode(TX CMD)	--	25		-	-		A	0		6.25
+6		POLL-BIS2-A(BA)	MCode(TX CMD)	--	26		-	-		A	0		6.25
+6		POLL-BIS1-B(BB)	MCode(TX CMD)	--	25		-	-		A	0		6.25
+6		POLL-BIS2-B(BB)	MCode(TXCMD)	--	26		-	-		A	0		6.25
+7		SYNCA(BusA)	MCode 		--	31		-	-		A	1		50
+7		SYNCB(BusB)	MCode 		--	31		-	-		A	1		50
+7		SYS05-1		RT-BC		5	--		4	-		A	6		6.25
+7		SYS07-1		RT-BC		7	--		4	-		A	7		6.25
+7		SYS15-1		RT-BC		15	--		4	-		A	20		6.25
+7		SYS13-1		RT-RT		13	15		15	5		A	25		6.25
+7		SYS06-101	RT-BC		6	--		1	-		A	16		6.25
+7		SYS07-104	RT-BC		7	--		5	-		A	32		6.25
+7		SYS16-1		RT-BC		16	--		4	-		A	20		6.25
+7		SYS16-111A	RT-BC		16	--		26	-		A	32		6.25
+7		PMC-118A	BC-RT		--	15		-	4		A	25		6.25
+7		PMC1-117	BC-RT		--	25		-	9		A	10		6.25
+7		PMC2-112	BC-RT		--	26		-	2		A	5		6.25
+7		SYS10-1		RT-BC		10	--		4	-		A	7		6.25
+7		POLL-S13-A(BA)	MCode(TX CMD)	--	13		-	-		A	0		6.25
+7		POLL-S10-A(BA)	MCode(TX CMD)	--	10		-	-		A	0		6.25
+7		POLL-S13-B(BB)	MCode(TX CMD)	--	13		-	-		A	0		6.25
+7		POLL-S10-B(BB)	MCode(TX CMD)	--	10		-	-		A	0		6.25
+8		SYNCA(BusA)	MCode 		--	31		-	-		A	1		50
+8		SYNCB(BusB)	MCode 		--	31		-	-		A	1		50
+8		SYS06-1		RT-BC		6	--		4	-		A	9		6.25
+8		SYS05-101	RT-BC		5	--		1	-		A	7		6.25
+8		SYS06-105	RT-BC		6	--		17	-		A	6		6.25
+8		SYS07-105	RT-BC		7	--		6	-		A	28		6.25
+8		SYS21-103	RT-BC		22	--		3	-		A	12		6.25
+8		SYS22-103	RT-BC		22	--		4	-		A	12		6.25
+8		PMC-106		BC-RT		--	22		-	6		A	2		6.25
+8		PMC-106A	BC-RT		--	22		-	6		A	2		6.25
+8		PMC-555		BC-RT		--	10		-	10		A	10		6.25
+8		PMC-165		BC-RT		--	5		-	23		A	4		6.25
+8		BIS2X-402	RT-BC		26	--		14	-		A	1		6.25
+8		PMC-129		BC-RT		--	10		-	2		A	27		6.25
+8		PMC-162		BC-RT		--	7		-	10		A	14		6.25
+8		PMC-159		BC-RT		--	7		-	7		A	30		6.25
+8		SYS21-102	RT-RT		21	2		2	15		A	13		6.25
+8		SYS22-102	RT-RT		22	2		2	16		A	13		6.25
+8		SYS15-102	RT-BC		15	--		3	-		A	20		6.25
+8		SYS16-104	RT-BC		16	--		3	-		A	21		6.25
+8		POLL-S07-A(BA)	MCode(TX CMD)	--	7		-	-		A	0		6.25
+8		POLL-S07-B(BB)	MCode(TX CMD)	--	7		-	-		A	0		6.25
+8		BIS2X-306A	RT-BC		26	--		20	-		A	16		6.25
+8		PMC-1		BC-RT		--	5		-	2		A	32		25
+										         

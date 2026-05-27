@@ -1,0 +1,2 @@
+ubuntu 12.04.1
+ker:3.2.0-29-generic

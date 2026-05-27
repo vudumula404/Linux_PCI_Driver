@@ -1,0 +1,5 @@
+APOORVA1553Dll:
+	g++ -g -c -o libApoorva31Rts_4NodeDll_CPP.o Apoorva31Rts_4NodeDll.cpp 
+	ar rcs libApoorva31Rts_4NodeDll_CPP.a libApoorva31Rts_4NodeDll_CPP.o	
+
+

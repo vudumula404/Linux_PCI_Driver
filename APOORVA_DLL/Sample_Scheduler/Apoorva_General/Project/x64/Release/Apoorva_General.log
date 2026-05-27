@@ -1,0 +1,52 @@
+﻿Build started 12/16/2016 8:45:12 PM.
+     1>Project "C:\Apoorva_General\Project\Apoorva_General.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "x64\Release\Apoorva_General.lastbuildstate".
+       InitializeBuildStatus:
+         Touching "x64\Release\Apoorva_General.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /D WIN32 /D NDEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc100.pdb" /Gd /TP /errorReport:prompt "..\OnlyTxRx-RS422-BC latest.cpp"
+         OnlyTxRx-RS422-BC latest.cpp
+     1>..\OnlyTxRx-RS422-BC latest.cpp(202): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>..\OnlyTxRx-RS422-BC latest.cpp(193): warning C4101: 'bytes_to_Rx' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(192): warning C4101: 'bytes_to_send' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(190): warning C4101: 'BytesToSend' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(187): warning C4101: 'DATA' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(195): warning C4101: 'NoOfBytesRead' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(296): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>..\OnlyTxRx-RS422-BC latest.cpp(313): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\conio.h(130) : see declaration of 'kbhit'
+     1>..\OnlyTxRx-RS422-BC latest.cpp(280): warning C4101: 'bytes_to_Rx' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(280): warning C4101: 'bytes_to_send' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(285): warning C4101: 'NoOfBytesRead' : unreferenced local variable
+     1>..\OnlyTxRx-RS422-BC latest.cpp(468): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Apoorva_General\Project\x64\Release\Apoorva_General.exe) does not match the Linker's OutputFile property value (C:\Apoorva_General\Project\Release\Apoorva_General.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:".\Release/Apoorva_General.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Release\Apoorva_General.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:".\Release/Apoorva_General.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"x64\Release\Apoorva_General.lib" /MACHINE:X64 ".\Release/OnlyTxRx-RS422-BC latest.obj"
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl StopTimerIntr(unsigned short)" (?StopTimerIntr@@YADG@Z) referenced in function "int __cdecl thread(void *)" (?thread@@YAHPEAX@Z)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "long __cdecl GetTMR1Cnt(unsigned char)" (?GetTMR1Cnt@@YAJE@Z) referenced in function "int __cdecl thread(void *)" (?thread@@YAHPEAX@Z)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl SetBCEOMCnt(unsigned char,unsigned long,unsigned char)" (?SetBCEOMCnt@@YADEKE@Z) referenced in function "int __cdecl thread(void *)" (?thread@@YAHPEAX@Z)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl CloseDeviceHandle(unsigned char)" (?CloseDeviceHandle@@YADE@Z) referenced in function "void __cdecl ResetAll(void)" (?ResetAll@@YAXXZ)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl ResetBc(unsigned char,unsigned char)" (?ResetBc@@YADEE@Z) referenced in function "void __cdecl ResetAll(void)" (?ResetAll@@YAXXZ)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl ResetRt(unsigned char,unsigned char)" (?ResetRt@@YADEE@Z) referenced in function "void __cdecl ResetAll(void)" (?ResetAll@@YAXXZ)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl DisableInterrupts(unsigned char,unsigned char)" (?DisableInterrupts@@YADEE@Z) referenced in function "void __cdecl ResetAll(void)" (?ResetAll@@YAXXZ)
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "short __cdecl ReadMsgBC(unsigned char,unsigned short,unsigned short,struct MSG_RESULT *,unsigned char)" (?ReadMsgBC@@YAFEGGPEAUMSG_RESULT@@E@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "long __cdecl GetExternalCnt(unsigned char,unsigned char,unsigned long volatile *)" (?GetExternalCnt@@YAJEEPECK@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl ConfigureBC(unsigned char,unsigned short,unsigned char)" (?ConfigureBC@@YADEGE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl ClearRam(unsigned char,unsigned short,unsigned char)" (?ClearRam@@YADEGE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl InitTimerIntr(unsigned char,unsigned char,unsigned char)" (?InitTimerIntr@@YADEEE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl SetTMR2Cnt(unsigned long,unsigned char)" (?SetTMR2Cnt@@YADKE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl SetTMR1Cnt(unsigned long,unsigned char)" (?SetTMR1Cnt@@YADKE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl SelectTMR(unsigned long,unsigned char,unsigned char)" (?SelectTMR@@YADKEE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "char __cdecl InitInterrupts(unsigned char,unsigned char,unsigned char)" (?InitInterrupts@@YADEEE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "int __cdecl SoftwareReset(unsigned char)" (?SoftwareReset@@YAHE@Z) referenced in function main
+     1>OnlyTxRx-RS422-BC latest.obj : error LNK2019: unresolved external symbol "int __cdecl InitCard(unsigned char)" (?InitCard@@YAHE@Z) referenced in function main
+     1>.\Release/Apoorva_General.exe : fatal error LNK1120: 18 unresolved externals
+     1>Done Building Project "C:\Apoorva_General\Project\Apoorva_General.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.54

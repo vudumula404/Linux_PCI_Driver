@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug USER",
+            "type": "cppdbg",
+            "request": "launch",
+
+            "program": "${workspaceFolder}/APOORVA_DLL/Sample_Scheduler/USER",
+
+            "cwd": "${workspaceFolder}/APOORVA_DLL/Sample_Scheduler",
+
+            "stopAtEntry": false,
+
+            "MIMode": "gdb",
+
+            "miDebuggerPath": "/usr/bin/gdb",
+
+            "externalConsole": false
+        }
+    ]
+}
