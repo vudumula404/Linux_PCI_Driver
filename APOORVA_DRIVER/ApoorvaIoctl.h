@@ -1,0 +1,210 @@
+#include <linux/ioctl.h>
+#include <asm/ioctl.h>
+#ifdef __KERNEL__
+#include <linux/types.h>
+#else
+#include <stdint.h>
+#endif
+
+struct DELSEL_CMD
+{
+   unsigned int node;
+   unsigned int wrd;
+};
+typedef struct _INTERRUPT
+{
+    uint32_t reg;
+    uint32_t val;
+    uint32_t card;
+    uint32_t Module;
+}INTR;
+
+typedef struct _Addr
+{
+	unsigned int Addr;
+	unsigned short Data;
+}Addr;
+
+
+struct reg_op1 {
+    unsigned int offset;
+    unsigned int value;   /* value to write */
+};
+
+struct reg_op2 {
+    unsigned int offset;
+    unsigned int value;   /* returned value for read */
+};
+
+struct dma_rw {
+    void *buf;        /* user-space pointer */
+    unsigned int len;     /* number of bytes to transfer */
+    unsigned int offset;  /* offset into DMA kernel buffer */
+};
+
+/* DMA physical read (kernel -> user) */
+struct dma_phys_rw {
+    void *buf;        /* user-space pointer where kernel will copy data */
+    unsigned int len;     /* number of bytes to copy */
+    unsigned int offset;  /* offset inside kernel DMA buffer */
+};
+
+#define C4A00_ADDR  0x189400 //C4A00
+#define BIT1_MASK   (1U << 1)
+
+#define REG_SIZE  0x100
+
+#define MAJOR_NUM_CARD1 1553
+#define MAJOR_NUM_CARD2 2553
+#define MAJOR_NUM_CARD3 3553
+#define MAJOR_NUM_CARD4 4553
+#define DEVICE_NAME "APOORVA1553"
+
+
+static int MOD1_EOMCNT		=	0;
+static int MOD2_EOMCNT		=	0;
+static int MOD3_EOMCNT		=	0;
+
+/************************************  CARD-1 IOCTL's	******************************/
+
+#define IOCTL_CARD1_DEBUG_ENABLE   			_IOWR(MAJOR_NUM_CARD1,0x1,int)
+#define IOCTL_CARD1_DEBUG_DISABLE   			_IOWR(MAJOR_NUM_CARD1,0x2,int)
+
+#define IOCTL_CARD1_SET_ICS_REG   			_IOWR(MAJOR_NUM_CARD1,0x3,int)
+#define IOCTL_CARD1_SOFTWARE_RESET   			_IOWR(MAJOR_NUM_CARD1,0x4,int)
+
+#define IOCTL_CARD1_MEM_READ_MODULE1  			_IOR(MAJOR_NUM_CARD1,0x5,int)
+#define IOCTL_CARD1_MEM_WRITE_MODULE1  			_IOW(MAJOR_NUM_CARD1,0x6,int)
+
+#define IOCTL_CARD1_MEM_READ_MODULE2  			_IOR(MAJOR_NUM_CARD1,0x7,int)
+#define IOCTL_CARD1_MEM_WRITE_MODULE2  			_IOW(MAJOR_NUM_CARD1,0x8,int)
+
+#define IOCTL_CARD1_MEM_READ_MODULE3  			_IOR(MAJOR_NUM_CARD1,0x9,int)
+#define IOCTL_CARD1_MEM_WRITE_MODULE3  			_IOW(MAJOR_NUM_CARD1,0xa,int)
+
+#define IOCTL_CARD1_MEM_READ_MODULE4  			_IOR(MAJOR_NUM_CARD1,0xb,int)
+#define IOCTL_CARD1_MEM_WRITE_MODULE4  			_IOW(MAJOR_NUM_CARD1,0xc,int)
+
+
+
+#define IOCTL_CARD1_REG_READ_MODULE1  			_IOR(MAJOR_NUM_CARD1,0xd,int)
+#define IOCTL_CARD1_REG_WRITE_MODULE1  			_IOW(MAJOR_NUM_CARD1,0xe,int)
+
+#define IOCTL_CARD1_REG_READ_MODULE2  			_IOR(MAJOR_NUM_CARD1,0xf,int)
+#define IOCTL_CARD1_REG_WRITE_MODULE2  			_IOW(MAJOR_NUM_CARD1,0x10,int)
+
+#define IOCTL_CARD1_REG_READ_MODULE3  			_IOR(MAJOR_NUM_CARD1,0x11,int)
+#define IOCTL_CARD1_REG_WRITE_MODULE3  			_IOW(MAJOR_NUM_CARD1,0x12,int)
+
+#define IOCTL_CARD1_REG_READ_MODULE4  			_IOR(MAJOR_NUM_CARD1,0x13,int)
+#define IOCTL_CARD1_REG_WRITE_MODULE4  			_IOW(MAJOR_NUM_CARD1,0x14,int)
+
+
+#define IOCTL_CARD1_READ_PORT	  			_IOR(MAJOR_NUM_CARD1,0x15,int)
+#define IOCTL_CARD1_WRITE_PORT	 			_IOW(MAJOR_NUM_CARD1,0x16,int)
+
+
+#define IOCTL_CARD1_ENABLE_INT				_IOWR(MAJOR_NUM_CARD1,0x17,int)
+
+#define IOCTL_UART_GET_INT				_IOWR(MAJOR_NUM_CARD1,0x18,int)
+#define IOCTL_UART_SET_INT				_IOWR(MAJOR_NUM_CARD1,0x19,int)
+
+#define IOCTL_UART_READ					_IOWR(MAJOR_NUM_CARD1,0x1a,int)
+#define IOCTL_UART_WRITE				_IOWR(MAJOR_NUM_CARD1,0x1b,int)
+#define IOCTL_SET_M1CNT                                 _IOW(MAJOR_NUM_CARD1,0x1c,int)
+#define IOCTL_GET_M1CNT                                 _IOR(MAJOR_NUM_CARD1,0x1d,int)
+#define IOCTL_CARD1_WRITE_PORT_A                        _IOW(MAJOR_NUM_CARD1,0x1e,int)
+#define IOCTL_CARD1_READ_PORT_A                         _IOR(MAJOR_NUM_CARD1,0x1f,int)
+
+#define IOCTL_WRITE_REG       _IOW(MAJOR_NUM_CARD1, 0x20, struct reg_op1)
+#define IOCTL_READ_REG        _IOR(MAJOR_NUM_CARD1, 0x21, struct reg_op2)
+#define IOCTL_DMA_ALLOC       _IOW(MAJOR_NUM_CARD1, 0x23, size_t)
+#define IOCTL_DMA_FREE        _IO(MAJOR_NUM_CARD1,  0x24)
+#define IOCTL_DMA_GET_PHYS    _IOR(MAJOR_NUM_CARD1, 0x25, uint64_t)
+#define IOCTL_DMA_WRITE_USER  _IOW(MAJOR_NUM_CARD1, 0x26, struct dma_rw)   /* user -> dma buf */
+#define IOCTL_DMA_READ_USER   _IOR(MAJOR_NUM_CARD1, 0x27, struct dma_rw)   /* dma buf -> user */
+#define IOCTL_DMA_READ_PHYS   _IOWR(MAJOR_NUM_CARD1, 0x28, struct dma_phys_rw)
+#define IOCTL_GET_BIT_STATUS  _IOR(MAJOR_NUM_CARD1, 0x29, int)
+
+#define IOCTL_SEL_CMD  _IOW(MAJOR_NUM_CARD1,0X2a,struct DELSEL_CMD)
+#define IOCTL_DELSEL_CMD  _IOW(MAJOR_NUM_CARD1,0X2b,struct DELSEL_CMD)
+
+#define IOCTL_CARD1_MOD1_SET_BCEOMCNT  			_IOR(MAJOR_NUM_CARD1,0x2c,int)
+#define IOCTL_CARD1_MOD2_SET_BCEOMCNT  			_IOR(MAJOR_NUM_CARD1,0x2d,int)
+#define IOCTL_CARD1_MOD3_SET_BCEOMCNT  			_IOR(MAJOR_NUM_CARD1,0x2e,int)
+
+#define IOCTL_CARD1_MOD1_GET_BCEOMCNT  			_IOR(MAJOR_NUM_CARD1,0x2f,int)
+#define IOCTL_CARD1_MOD2_GET_BCEOMCNT  			_IOR(MAJOR_NUM_CARD1,0x30,int)
+#define IOCTL_CARD1_MOD3_GET_BCEOMCNT  			_IOR(MAJOR_NUM_CARD1,0x31,int)
+
+#define IOCTL_CARD1_INIT_INT_MODULE1  _IOW(MAJOR_NUM_CARD1,0x31,int)
+#define IOCTL_CARD1_ENB_INT_MODULE1  _IOW(MAJOR_NUM_CARD1,0x32,int)
+
+#define IOCTL_CARD1_MEM_INTR_WRITE _IOWR(MAJOR_NUM_CARD1,0x33,int)
+
+#define IOCTL_CARD1_MOD1_GET_BCEOMCNT  _IOWR(MAJOR_NUM_CARD1,0x34,int)
+#define IOCTL_CARD1_MOD1_GET_BCEOFCNT _IOWR(MAJOR_NUM_CARD1,0x35,int)
+#define IOCTL_CARD1_MOD1_GET_BCEOFMINCNT _IOWR(MAJOR_NUM_CARD1,0x36,int)
+
+
+#define IOCTL_CARD1_MOD1_SET_BCEOMCNT _IOWR(MAJOR_NUM_CARD1,0x37,int)
+#define IOCTL_CARD1_MOD1_SET_BCEOFCNT _IOWR(MAJOR_NUM_CARD1,0x38,int)
+#define IOCTL_CARD1_MOD1_SET_BCEOFMINCNT _IOWR(MAJOR_NUM_CARD1,0x39,int)
+
+#define IOCTL_CARD1_MOD1_GET_MTEOMCNT  _IOWR(MAJOR_NUM_CARD1,0x3a,int)
+#define IOCTL_CARD1_MOD1_SET_MTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x3b,int)
+
+#define IOCTL_CARD1_MOD2_SET_MTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x3C,int)
+#define IOCTL_CARD1_MOD2_GET_MTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x3D,int)
+
+#define IOCTL_CARD1_MOD2_SET_RTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x3e,int)
+#define IOCTL_CARD1_MOD2_GET_RTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x3f,int)
+
+#define IOCTL_CARD1_MOD3_SET_MTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x40,int)
+#define IOCTL_CARD1_MOD3_GET_MTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x41,int)
+
+#define IOCTL_CARD1_MOD1_SET_RTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x42,int)
+#define IOCTL_CARD1_MOD1_GET_RTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x43,int)
+
+#define IOCTL_CARD1_MOD1_GET_BCSOMCNT  _IOWR(MAJOR_NUM_CARD1,0x44,int)
+#define IOCTL_CARD1_MOD1_SET_BCSOMCNT  _IOWR(MAJOR_NUM_CARD1,0x45,int)
+
+#define IOCTL_CARD1_MOD2_GET_BCSOMCNT  _IOWR(MAJOR_NUM_CARD1,0x46,int)
+#define IOCTL_CARD1_MOD2_SET_BCSOMCNT  _IOWR(MAJOR_NUM_CARD1,0x47,int)
+
+#define IOCTL_CARD1_MOD3_GET_BCSOMCNT  _IOWR(MAJOR_NUM_CARD1,0x48,int)
+#define IOCTL_CARD1_MOD3_SET_BCSOMCNT  _IOWR(MAJOR_NUM_CARD1,0x49,int)
+
+#define IOCTL_CARD1_MOD3_SET_RTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x4a,int)
+#define IOCTL_CARD1_MOD3_GET_RTEOMCNT _IOWR(MAJOR_NUM_CARD1,0x4b,int)
+
+#define IOCTL_CARD1_MOD2_SET_BCEOFCNT _IOWR(MAJOR_NUM_CARD1,0x4C,int)
+#define IOCTL_CARD1_MOD2_SET_BCEOFMINCNT _IOWR(MAJOR_NUM_CARD1,0x4D,int)
+
+#define IOCTL_CARD1_MOD3_SET_BCEOFCNT _IOWR(MAJOR_NUM_CARD1,0x4E,int)
+#define IOCTL_CARD1_MOD3_SET_BCEOFMINCNT _IOWR(MAJOR_NUM_CARD1,0x4F,int)
+
+#define IOCTL_CARD1_MOD2_GET_BCEOFCNT _IOWR(MAJOR_NUM_CARD1,0x50,int)
+#define IOCTL_CARD1_MOD2_GET_BCEOFMINCNT _IOWR(MAJOR_NUM_CARD1,0x51,int)
+
+#define IOCTL_CARD1_MOD3_GET_BCEOFCNT _IOWR(MAJOR_NUM_CARD1,0x52,int)
+#define IOCTL_CARD1_MOD3_GET_BCEOFMINCNT _IOWR(MAJOR_NUM_CARD1,0x53,int)
+
+#define IOCTL_CARD1_MOD1_SET_RTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x54,int)
+#define IOCTL_CARD1_MOD2_SET_RTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x55,int)
+#define IOCTL_CARD1_MOD3_SET_RTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x56,int)
+
+#define IOCTL_CARD1_MOD1_SET_MTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x57,int)
+#define IOCTL_CARD1_MOD2_SET_MTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x58,int)
+#define IOCTL_CARD1_MOD3_SET_MTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x59,int)
+
+#define IOCTL_CARD1_MOD1_GET_RTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x5A,int)
+#define IOCTL_CARD1_MOD2_GET_RTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x5B,int)
+#define IOCTL_CARD1_MOD3_GET_RTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x5C,int)
+
+#define IOCTL_CARD1_MOD1_GET_MTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x5D,int)
+#define IOCTL_CARD1_MOD2_GET_MTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x5E,int)
+#define IOCTL_CARD1_MOD3_GET_MTSOMCNT    _IOWR(MAJOR_NUM_CARD1,0x5F,int)
+
+#define GET_DMA_ADDR   _IOWR(MAJOR_NUM_CARD1, 0x60, unsigned long long)
+
