@@ -5,4 +5,4 @@
 *.cmd
 Module.symvers
 modules.order
-.tmp_versions/
+.tmp_versions
