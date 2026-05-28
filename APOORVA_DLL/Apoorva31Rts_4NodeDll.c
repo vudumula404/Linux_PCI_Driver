@@ -141,6 +141,7 @@ static uint16_t g_dma_frame[TOTAL_FRAME_WORDS];
 USHORT WriteIntr(UCHAR Bus, ULONG addr, USHORT val, UCHAR CardId);
 
 
+
 int kbhit(void)
 {
     struct termios oldt, newt;
@@ -356,8 +357,6 @@ void Configure_DMA_Write(UCHAR Bus, UCHAR CardId)
    
 void Configure_DMA_READ(UCHAR Bus, UCHAR CardId) 
 {
-   
-    printf("Registers for read\n");
     if (CardId < 1 || CardId > 4) 
     {
         printf("Invalid CardId. CardId must be between 1 and 4.\n");
@@ -369,14 +368,21 @@ void Configure_DMA_READ(UCHAR Bus, UCHAR CardId)
         printf("Invalid Bus. Bus must be between 1 and 4.\n");
         return; 
     }
+     if (ioctl(fd, IOCTL_DMA_GET_PHYS, &phys) < 0) {
+        perror("IOCTL_DMA_GET_PHYS");
+        return;
+    }
+
+    dma_phys_addr = phys;
 
     struct {
         uint32_t offset;
         uint32_t value;
     } regs[] = {
+        {0x189400 >>1  , 0x04}, {0x189400 >> 1, 0x00}, 
         {0xC4800, 0x01}, {0xC4880, 0x24000}, 
         {0xC48C0, 0xFA0}, {0xC4900, 0x00}, {0xC4980, dma_phys_addr + 0x0},
-        {0xC49C0, 0xFA0}//, {0xC4A00, 0x03}, {0xC4A00, 0x00}
+        {0xC49C0, 0xFA0}
     };
 
     int count = sizeof(regs) / sizeof(regs[0]);
@@ -387,7 +393,7 @@ void Configure_DMA_READ(UCHAR Bus, UCHAR CardId)
         w.offset = regs[i].offset;
         w.value = regs[i].value;
 
-        printf("[WRITE] REG[0x%03X] <= 0x%08X\n", w.offset, w.value);
+        //printf("[WRITE] REG[0x%03X] <= 0x%08X\n", w.offset, w.value);
 
         if (ioctl(fd, IOCTL_WRITE_REG, &w) < 0) 
         {
@@ -433,53 +439,58 @@ void Read_control_registers(UCHAR Bus, UCHAR CardId)
 
     printf("\nControl registers read successfully.\n");
 }
-void read_dma_block(UCHAR Bus, UCHAR CardId)
+void read_dma_block(void)
 {
-       if (CardId < 1 || CardId > 4) 
+    printf("\n========== DMA READ ==========\n");
+
+    uint32_t dwords = 256;
+    uint32_t bytes = dwords * sizeof(uint32_t);
+
+    uint8_t *buf = malloc(bytes);
+
+    if (!buf)
     {
-        printf("Invalid CardId. CardId must be between 1 and 4.\n");
+        perror("malloc");
         return;
     }
 
-    if (Bus < 1 || Bus > 4) 
-    {
-        printf("Invalid Bus. Bus must be between 1 and 4.\n");
-        return; 
+    memset(buf, 0, bytes);
+
+    struct dma_rw rw;
+
+    rw.buf    = buf;
+    rw.len    = bytes;
+    rw.offset = 0x0;
+
+    printf("READ REQUEST:\n");
+    printf("OFFSET = 0x%X\n", rw.offset);
+    printf("LEN    = %u bytes\n", rw.len);
+   if (ioctl(fd, IOCTL_DMA_GET_PHYS, &phys) < 0) {
+        perror("IOCTL_DMA_GET_PHYS");
+        return;
     }
 
-    printf("\n========== DMA READ ==========\n");
+    dma_phys_addr = phys;
 
-    size_t words = 256;
-    size_t bytes = words * sizeof(uint32_t);
-
-    uint8_t *buf = malloc(bytes);
-    if (!buf) 
-    { 
-        perror("malloc");
-        return; 
-    }
-
-    struct dma_phys_rw req;
-    req.buf = buf;
-    req.len = bytes;
-    req.offset = 0x00;   
-
-    if (ioctl(fd, IOCTL_DMA_READ_PHYS, &req) < 0) 
+    if (ioctl(fd, IOCTL_DMA_READ_USER, &rw) < 0)
     {
-        perror("IOCTL_DMA_READ_PHYS failed");
+        perror("IOCTL_DMA_READ_USER failed");
         free(buf);
         return;
     }
 
-    printf("Read back values from DMA buffer (physical addresses shown):\n");
+    printf("\nDMA BUFFER DATA:\n");
 
-    for (size_t i = 0; i < words; i++) 
+    for (uint32_t i = 0; i < dwords; i++)
     {
         uint32_t val;
-        memcpy(&val, buf + (i * 4), 4);  
-        printf("[0x%016llX] = 0x%08X\n",
-               (unsigned long long)(dma_phys_addr + i * sizeof(uint32_t)),  
-               val);  
+
+        memcpy(&val, buf + (i * 4), sizeof(uint32_t));
+
+        /*printf("[0x%016llX] = 0x%08X\n",
+               (unsigned long long)
+               (dma_phys_addr + (i * sizeof(uint32_t))),
+               val);*/
     }
 
     free(buf);
@@ -516,9 +527,7 @@ void read_phys(UCHAR Bus, UCHAR CardId)
 
 void write_via_dma(UCHAR Bus,int total_bytes)
 {
-    printf("Total Bytes in Write DMA = %d\n",total_bytes);
-   
-
+    
     if (Bus < 1 || Bus > 4) {
         printf("Invalid Bus\n");
         return;
@@ -5345,6 +5354,7 @@ CHAR DisableInterruptsBC(UCHAR Bus,USHORT Value,UCHAR CardId)
 	else
 		return FALSE;
 }
+
 CHAR DisableInterruptsRT(UCHAR Bus,USHORT Value,UCHAR CardId)
 {
 	BOOL CardFlag = FALSE;
@@ -5369,18 +5379,15 @@ CHAR DisableInterruptsRT(UCHAR Bus,USHORT Value,UCHAR CardId)
 		{
 			if(Bus==1)
 			{
-			        //printf("Enable Interrupts for Mod 1 called\n");
 				WriteIntr(Bus,RT_INT_EN_MOD1,Value,CardId);
 			}
 			else if(Bus==2)
 			{       
-			        //printf("Enable Interrupts for Mod 2 called\n");
 				WriteIntr(Bus,RT_INT_EN_MOD2,Value,CardId);
 		           
 			}
 			else if(Bus==3)
 			{       
-			        //printf("Enable Interrupts for Mod 3 called\n");
 				WriteIntr(Bus,RT_INT_EN_MOD3,Value,CardId);
 			}
 			
@@ -5393,6 +5400,7 @@ CHAR DisableInterruptsRT(UCHAR Bus,USHORT Value,UCHAR CardId)
 	else
 		return FALSE;
 }
+
 CHAR DisableInterruptsMT(UCHAR Bus,USHORT Value,UCHAR CardId)
 {
 	BOOL CardFlag = FALSE;
@@ -5505,38 +5513,12 @@ void WriteDMA(UCHAR MODid,
     wr.len    = sizeof(uint16_t);   // always 2 bytes
     wr.offset = location * sizeof(uint16_t);
 
-    /*printf("\n[USER] WriteDMA ----------------------------\n");
-    printf("Location(word) : %u\n", location);
-    printf("ByteOffset     : %zu\n", wr.offset);
-    printf("Data(sent)     : 0x%04X\n", temp);*/
-
     if (ioctl(fd, IOCTL_DMA_WRITE_USER, &wr) < 0)
     {
         perror("IOCTL_DMA_WRITE_USER");
     }
 }
-void ReadDMA(UCHAR MODid,
-             UCHAR Cardid)
-{
-    uint16_t temp;
-    struct dma_rw wr;
 
-    /*wr.buf = &temp;
-    wr.len = sizeof(uint16_t);
-    wr.offset = location * sizeof(uint16_t);
-
-    printf("\n[USER] ReadDMA ----------------------------\n");
-    printf("Location(word) : %u\n", location);
-    printf("ByteOffset     : %zu\n", wr.offset);*/
-
-    if (ioctl(fd, IOCTL_DMA_READ_USER, &wr) < 0)
-    {
-        perror("IOCTL_DMA_READ_USER");
-        return;
-    }
-
-    //printf("Data(received) : 0x%04X\n", temp);
-}
 void DEFMSG_DMA(UCHAR ModId,
                 unsigned short msg_num,
                 MSG_DEF def,

@@ -216,6 +216,15 @@ void Async(int BcMod, int mtModId, int channel,int NoOfTimes, int msg_no, int pr
 void Async_Broadcast(int BcMod, int msg_no, int prior);
 CHAR InitInterrupts(UCHAR Bus,USHORT Value,UCHAR CardId);
 
+void Configure_DMA_READ(UCHAR Bus, UCHAR CardId);
+int Trigger_DMA(UCHAR Bus, UCHAR CardId,uint32_t value);
+void read_dma_block(void);
+void Configure_DMA_Write(UCHAR Bus, UCHAR CardId);
+int DMA_Source_Destination(uint32_t source,uint32_t destination);
+void write_via_dma(UCHAR Bus,int total_bytes);
+void DEFMSG_DMA(UCHAR ModId,unsigned short msg_num,MSG_DEF def,unsigned short data_buffer[], unsigned short num_of_data_words,unsigned short IntMsgGap);
+
+
 
 
 

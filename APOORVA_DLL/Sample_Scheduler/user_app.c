@@ -43,9 +43,6 @@
 
 #define DISABLE  0x00000000
 
-/* ── Ring-buffer constants ── */
-#define MT_RING_SIZE         4096
-#define MT_OVERRUN_THRESHOLD 2048
 
 /* ── Messages per minor frame for each test type ──
  *   Change these if you want a different number of messages.        */
@@ -184,9 +181,11 @@ printf("***********************DMA Read data************************\n");
       getchar();
       getchar();
       Configure_DMA_READ(1,1);
+      getchar();
       Trigger_DMA(1,1,3);
       getchar();
-      read_dma_block(1,1);
+      getchar();
+      read_dma_block();
 }
  void Run_All_DMA_Transfers2(void)
 {
@@ -221,7 +220,7 @@ printf("***********************DMA Read data************************\n");
     int i;
     int num_jobs = sizeof(dma_jobs) / sizeof(dma_jobs[0]);
 
-    printf("Total bytes prepared = %lu bytes\n", g_total_bytes_prepared);
+    //printf("Total bytes prepared = %lu bytes\n", g_total_bytes_prepared);
     write_via_dma(1, g_total_bytes_prepared);
     unsigned short temp=0x4000;
     for (i = 0; i < 20; i++)
@@ -282,19 +281,12 @@ void Run_All_DMA_Transfers(void)
     int i;
     int num_jobs = sizeof(dma_jobs) / sizeof(dma_jobs[0]);
 
-    printf("Total bytes prepared = %lu bytes\n", g_total_bytes_prepared);
+    //printf("Total bytes prepared = %lu bytes\n", g_total_bytes_prepared);
     write_via_dma(1, g_total_bytes_prepared);
     unsigned short temp=0x4000;
     for (i = 0; i < 20; i++)
     {
-       // printf("Starting DMA Transfer %d/%d\n", i + 1, num_jobs);
-      //  printf("  Source Offset : 0x%08X\n", dma_jobs[i].src_offset);
-      //  printf("  Destination   : 0x%08X\n", dma_jobs[i].dst_addr);
-
-        /* Small delay between transfers */
-       // usleep(1000);
-       //  getchar();
-        /* Configure DMA engine */
+      
         Configure_DMA_Write(1, 1);
          
         /* Program source and destination */
@@ -305,19 +297,6 @@ void Run_All_DMA_Transfers(void)
         Trigger_DMA(1, 1, 1);
         usleep(1000);
        
-/*        for(int j =0x0; j< 0x7d0 ;j++)
-         {
-              printf("Loaction = 0x%04x  Data = 0x%04x\n",temp+j,MemRead(BC_MOD,temp+j,1));
-         }
-         
-        printf("press enter to continue\n");
-        getchar();
-        if(i>0)
-        {
-          temp=temp+0x7d0;
-         }*/
-        /* Wait for user confirmation (remove if not needed) */
-       // getchar();
     }
 
     printf("All DMA transfers completed successfully.\n");
@@ -498,7 +477,7 @@ static void BuildMinorFrame_BCRT(unsigned char mod,
         for (int idx = 0; idx < wc; idx++)
             data_buffer[idx] = ++data_value;
             
-           DEFMSG_DMA(mod, i + 1, bc_page, data_buffer, wc, 100);
+        DEFMSG_DMA(mod, i + 1, bc_page, data_buffer, wc, 100);
         
         g_total_bytes_prepared += (unsigned long)wc * sizeof(unsigned short);
        
@@ -516,7 +495,7 @@ for(int i =0 ;i<10;i++) //i = no of frames
     }
   }
     printf("\t Minor frame: %d BC→RT messages  RT=%u SA=%u WC=%u\n", 100, rt, sa, wc);
-    printf("\tTotal data bytes prepared = %lu bytes\n",g_total_bytes_prepared);
+    
 }
 
 static void BuildMinorFrame_RTBC(unsigned char mod,
@@ -567,7 +546,7 @@ for(int i =0 ;i<10;i++)
     }
   }
     printf("\t Minor frame: %d RT→BC messages  RT=%u SA=%u WC=%u\n", n, rt, sa, wc);
-    printf("\tTotal data bytes prepared = %lu bytes\n",g_total_bytes_prepared);
+    
 }
 
 static void BuildMinorFrame_RTRT(unsigned char mod,
@@ -628,7 +607,7 @@ for(int i =0 ;i<10;i++)
   }
     printf("\t Minor frame: %d RT→RT messages  TX_RT=%u SA=%u  RX_RT=%u SA=%u  WC=%u\n",
            n, tx_rt, tx_sa, rx_rt, rx_sa, wc);
-    printf("\tTotal data bytes prepared = %lu bytes\n",g_total_bytes_prepared);
+    
 }
 static void BuildMinorFrame_RTRT_BCST(unsigned char mod,
                                   unsigned char bus,
@@ -689,7 +668,7 @@ for(int i=0;i<10 ;i++)
 }
     printf("\t Minor frame: %d RT→RT messages  TX_RT=%u SA=%u  RX_RT=%u SA=%u  WC=%u\n",
            n, tx_rt, tx_sa, rx_rt, rx_sa, wc);
-    printf("\tTotal data bytes prepared = %lu bytes\n",g_total_bytes_prepared);
+    
 }
 
 static void BuildMinorFrame_MCode(unsigned char mod,
@@ -742,7 +721,7 @@ for(int i=0;i<10 ;i++)
     }
 }
     printf("\t Minor frame: %d Mode Code messages  RT=%u SA=%u WC=%u\n", n, rt, sa, wc);
-     printf("\tTotal data bytes prepared = %lu bytes\n",g_total_bytes_prepared);
+     
 }
 
 static void BuildMinorFrame_BCAST(unsigned char mod,
@@ -793,7 +772,7 @@ static void BuildMinorFrame_BCAST(unsigned char mod,
     }
   }
     printf("\t Minor frame: %d Broadcast messages  SA=%u WC=%u\n", n, sa, wc);
-    printf("\tTotal data bytes prepared = %lu bytes\n",g_total_bytes_prepared);
+    
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -836,11 +815,11 @@ void BCSchedule_BCRT(int Times, unsigned char mod, unsigned char ch,
     RunBcMajorFrame_new(mod, 0,10, major_frames, (unsigned long)Times,count,prior,dynamic_no); 
     usleep(1000);
     getchar();getchar();
-
+    Read_DMA();
     PrintDiagnostics(mod);
     getchar();
     getchar();
-    Read_DMA();
+    
     printf("third reg=%04x\n",RegRead(mod,0x03,1));
     printf("\t Enter to Reset BC........!\n");
     getchar(); getchar();
@@ -876,6 +855,8 @@ void BCSchedule_RTBC(int Times, unsigned char mod, unsigned char ch,
     usleep(10000);
     printf("\t BC Scheduling Started...\n");
     RunBcMajorFrame_new(mod, 0, 10, major_frames, (unsigned long)Times,count,prior,dynamic_no);
+    usleep(1000);
+    getchar(); getchar();
     PrintDiagnostics(mod);
 
     printf("\t Enter to Reset BC...\n");
@@ -910,6 +891,8 @@ void BCSchedule_RTRT(int Times, unsigned char mod, unsigned char ch,
     usleep(10000);
     printf("\t BC Scheduling Started...\n");
     RunBcMajorFrame_new(mod, 0, 10, major_frames, (unsigned long)Times,count,prior,dynamic_no);
+    usleep(1000);
+    getchar(); getchar();
     PrintDiagnostics(mod);
   //  GetRTSOMCnt(RT_MOD, CARDID); //GetRTEOMCnt(RT_MOD, CARDID);
 
@@ -933,6 +916,8 @@ void BCSchedule_RTRT_BCST(int Times, unsigned char mod, unsigned char ch,
     usleep(10000);
     printf("\t BC Scheduling Started...\n");
     RunBcMajorFrame_new(mod, 0, 10, major_frames, (unsigned long)Times,count,prior,dynamic_no);
+    usleep(1000);
+    getchar(); getchar();
     PrintDiagnostics(mod);
     //GetRTSOMCnt(RT_MOD, CARDID); //GetRTEOMCnt(RT_MOD, CARDID);
 
@@ -955,6 +940,8 @@ void BCSchedule_MCode(int Times, unsigned char mod, unsigned char ch,
     usleep(10000);
     printf("\t BC Mode Code Scheduling Started...\n");
     RunBcMajorFrame_new(mod, 0, 10, major_frames, (unsigned long)Times,count,prior,dynamic_no);
+    usleep(1000);
+    getchar(); getchar();
     PrintDiagnostics(mod);
 
     printf("\t Press Enter to Reset BC...\n");
@@ -978,6 +965,8 @@ void BCSchedule_BCAST(int Times, unsigned char mod, unsigned char ch,
     
     printf("\t BC Broadcast Scheduling Started...\n");
     RunBcMajorFrame_new(mod, 0, 10, major_frames, (unsigned long)Times,count,prior,dynamic_no);
+    usleep(1000);
+    getchar(); getchar();
     PrintDiagnostics(mod);
 
     printf("\t Enter to Reset BC........!\n");
@@ -1947,14 +1936,18 @@ int main(void)
 
             //printf("MT monitoring active. External BC send now.\n");
             printf("\t Press any key + ENTER in this terminal to stop.\n");
+            
+            
 
             /* Main thread just waits — MT thread owns stdin for keypress detection */
             pthread_join(mtThread, NULL);
             ResetAce(RtModId);   /* reset HERE, not inside thread */
             SetMTEOMCnt(RtModId, 0, CARDID);
             SetRTEOMCnt(RtModId, 0, CARDID);
+            
             disableNonCanonicalMode();
             printf("\t RT→BC test complete.\n");
+            Read_DMA();
             break;
              case 9:
                 int RtStatusBits;

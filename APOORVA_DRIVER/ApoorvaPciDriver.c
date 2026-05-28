@@ -230,7 +230,7 @@ static long device_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
 
         pr_err("DMA CPU BUFFER ADDRESS CALLED\n");
 
-        /* dma_cpu_buf is the CPU-accessible kernel virtual address */
+        
         cpu_buf_addr = (unsigned long long)(uintptr_t)dma_cpu_buf;
 
         if (copy_to_user((void __user *)ioctl_param,
@@ -246,7 +246,7 @@ static long device_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
         
     case IOCTL_WRITE_REG:
     {
-        printk(KERN_INFO "IOCTL: ioctl_num = 0x%X\n", ioctl_num); 
+        //printk(KERN_INFO "IOCTL: ioctl_num = 0x%X\n", ioctl_num); 
         struct reg_op1 w;
 
         if (ioctl_param == 0) {
@@ -264,7 +264,7 @@ static long device_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
             printk(KERN_ERR "IOCTL_WRITE_REG: Invalid BaseDDC pointer (device not initialized)\n");
             return -ENODEV;
         }
-          printk("BaseDDC offset: %08X\n", BaseDDC);
+          //printk("BaseDDC offset: %08X\n", BaseDDC);
       
         if (w.offset < 0xC4000 || w.offset > 0x1EFFFF) {
             printk(KERN_ERR "IOCTL_WRITE_REG: Invalid register offset: %08X\n", w.offset);
@@ -273,7 +273,7 @@ static long device_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
     }
         iowrite32(w.value, BaseDDC + w.offset);
 
-        printk(KERN_INFO "IOCTL_WRITE_REG: Written value 0x%08X to register at offset 0x%08X\n", w.value, w.offset);
+        //printk(KERN_INFO "IOCTL_WRITE_REG: Written value 0x%08X to register at offset 0x%08X\n", w.value, w.offset);
 
         return 0;
     }
@@ -309,7 +309,7 @@ static long device_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
           r.value = ioread32(BaseDDC + r.offset);
 
           
-          printk(KERN_INFO "IOCTL_READ_REG: Read value 0x%08X from register at offset 0x%08X\n", r.value, r.offset);
+         // printk(KERN_INFO "IOCTL_READ_REG: Read value 0x%08X from register at offset 0x%08X\n", r.value, r.offset);
 
           
           if (copy_to_user((void __user *)ioctl_param, &r, sizeof(r))) {
@@ -348,7 +348,7 @@ static long device_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
           phys = (uint64_t)dma_handle;
 
         
-          pr_info("IOCTL_DMA_GET_PHYS: Physical address = 0x%016llX\n", phys);
+          //pr_info("IOCTL_DMA_GET_PHYS: Physical address = 0x%016llX\n", phys);
          
          if (copy_to_user((void __user *)ioctl_param, &phys, sizeof(phys))) {
               pr_err("Failed to copy physical address to user space\n");
@@ -367,7 +367,7 @@ case IOCTL_DMA_WRITE_USER:
     int j;
 
     i++;
-    pr_info("\n[KERNEL] DMA WRITE CALLED %d\n", i);
+    //pr_info("\n[KERNEL] DMA WRITE CALLED %d\n", i);
 
     if (copy_from_user(&rw,
                        (void __user *)ioctl_param,
@@ -376,7 +376,7 @@ case IOCTL_DMA_WRITE_USER:
         return -EFAULT;
     }
 
-    pr_info("Offset=%zu Len=%zu\n", rw.offset, rw.len);
+    //pr_info("Offset=%zu Len=%zu\n", rw.offset, rw.len);
 
     if (!dma_cpu_buf)
         return -ENOMEM;
@@ -392,10 +392,10 @@ case IOCTL_DMA_WRITE_USER:
     dst8 = (u8 *)dma_cpu_buf + rw.offset;
 
     /* clear old data debug */
-    pr_info("OLD BUFFER:\n");
+    //pr_info("OLD BUFFER:\n");
     for (j = 0; j < rw.len; j += 2)
-        pr_info("%04x ", *(u16 *)(dst8 + j));
-    pr_info("\n");
+        //pr_info("%04x ", *(u16 *)(dst8 + j));
+    //pr_info("\n");
 
     /* SAFE COPY: keep BYTE COPY */
     if (copy_from_user(dst8,
@@ -408,56 +408,90 @@ case IOCTL_DMA_WRITE_USER:
     /* memory barrier */
     wmb();
 
-    pr_info("NEW BUFFER:\n");
+    //pr_info("NEW BUFFER:\n");
     for (j = 0; j < rw.len; j += 2)
-        pr_info("%04x ", *(u16 *)(dst8 + j));
-    pr_info("\n");
+        //pr_info("%04x ", *(u16 *)(dst8 + j));
+    //pr_info("\n");
 
-    pr_info("DMA BASE=%p OFFSET=%zu LEN=%zu\n",
-            dma_cpu_buf, rw.offset, rw.len);
+    /*pr_info("DMA BASE=%p OFFSET=%zu LEN=%zu\n",
+            dma_cpu_buf, rw.offset, rw.len);*/
 
     return 0;
 }
 
-   case IOCTL_DMA_READ_USER:
+case IOCTL_DMA_READ_USER:
 {
-    pr_info("DMA READ CALLED\n");
+    //pr_info("DMA READ CALLED\n");
+
     struct dma_rw rw;
+
     u8 *src8;
-    int j;
 
-    if (copy_from_user(&rw, (void __user *)ioctl_param, sizeof(rw)))
+    uint32_t j;
+
+    if (copy_from_user(&rw,
+                       (void __user *)ioctl_param,
+                       sizeof(rw)))
+    {
+        pr_err("copy_from_user failed\n");
         return -EFAULT;
-
-    if (!dma_cpu_buf)
-        return -ENOMEM;
-
-    if (rw.offset + rw.len > dma_size)
-        return -EINVAL;
-
-    if (rw.offset % 2 || rw.len % 2)
-        return -EINVAL;
-
-    src8 = (u8 *)dma_cpu_buf + rw.offset;
-
-    pr_info("\n[KERNEL] DMA READ OFFSET=%zu LEN=%zu\n",
-            rw.offset, rw.len);
-
-    pr_info("[KERNEL] DATA:\n");
-
-    for (j = 0; j < rw.len; j += 2) {
-        u16 val;
-
-        /* safe read (avoids alignment crash) */
-        memcpy(&val, src8 + j, sizeof(val));
-
-        pr_info("%04x ", val);
     }
 
-    pr_info("\n");
+    if (!dma_cpu_buf)
+    {
+        pr_err("DMA buffer NULL\n");
+        return -ENOMEM;
+    }
 
-    if (copy_to_user(rw.buf, src8, rw.len))
+    if ((rw.offset + rw.len) > dma_size)
+    {
+        pr_err("Invalid DMA range\n");
+        return -EINVAL;
+    }
+
+    /* 32-bit alignment check */
+    if ((rw.offset % 4) || (rw.len % 4))
+    {
+        pr_err("Alignment error\n");
+        return -EINVAL;
+    }
+
+    src8 = (u8 *)dma_cpu_buf + rw.offset;
+    //pr_info("DMA Address = 0x%08x\n",src8);
+
+    /*pr_info("\n[KERNEL] DMA READ\n");
+    pr_info("OFFSET = 0x%X\n", rw.offset);
+    pr_info("LEN    = %u\n", rw.len);*/
+
+   // pr_info("[KERNEL] DMA DATA:\n");
+
+    for (j = 0; j < rw.len; j += 4)
+    {
+        uint32_t val;
+
+        memcpy(&val,
+               src8 + j,
+               sizeof(uint32_t));
+
+        //pr_info("0x%08X ", val);
+
+        //if (((j / 4) + 1) % 8 == 0)
+           // pr_info("\n");
+    }
+
+    //pr_info("\n");
+
+   
+
+    if (copy_to_user(rw.buf,
+                     src8,
+                     rw.len))
+    {
+        pr_err("copy_to_user failed\n");
         return -EFAULT;
+    }
+
+    //pr_info("DMA READ SUCCESS\n");
 
     return 0;
 }
@@ -1063,7 +1097,7 @@ case IOCTL_DMA_WRITE_USER:
                 if (copy_from_user(&intr, (INTR __user *)ioctl_param, sizeof(INTR)))
                     return -EFAULT;
 
-                printk("Reg: 0x%x, Val: 0x%x\n",intr.reg, intr.val);
+                //printk("Reg: 0x%x, Val: 0x%x\n",intr.reg, intr.val);
 
                 iowrite16(intr.val, BaseDDC + intr.reg);
 
@@ -1077,7 +1111,7 @@ case IOCTL_DMA_WRITE_USER:
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
 
-             //atomic_set(&BCEOMCnt, val);   
+            
               BCEOMCnt = val;
               return 0;
           }
@@ -1088,7 +1122,7 @@ case IOCTL_DMA_WRITE_USER:
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
 
-             //atomic_set(&BCEOMCnt, val);   
+              
               BCEOM2Cnt = val;
               return 0;
           }
@@ -1099,7 +1133,7 @@ case IOCTL_DMA_WRITE_USER:
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
 
-             //atomic_set(&BCEOMCnt, val);   
+          
               BCEOM3Cnt = val;
               return 0;
           }
@@ -1277,8 +1311,7 @@ case IOCTL_DMA_WRITE_USER:
 
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
-
-             // atomic_set(&BCEOMCnt, val);   
+  
              BCEOFCnt=val;
               return 0;
           }
@@ -1289,7 +1322,6 @@ case IOCTL_DMA_WRITE_USER:
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
 
-             // atomic_set(&BCEOMCnt, val);   
              BCEOF2Cnt=val;
               return 0;
           }
@@ -1299,8 +1331,7 @@ case IOCTL_DMA_WRITE_USER:
 
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
-
-             // atomic_set(&BCEOMCnt, val);   
+  
              BCEOF3Cnt=val;
               return 0;
           }
@@ -1310,8 +1341,6 @@ case IOCTL_DMA_WRITE_USER:
 
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
-
-              //pr_info("SET BCEOMMINOR = %d\n", val);   // 🔥 add this
 
               BCEOMFCnt=val;
 
@@ -1325,8 +1354,6 @@ case IOCTL_DMA_WRITE_USER:
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
 
-              //pr_info("SET BCEOMMINOR = %d\n", val);   // 🔥 add this
-
              BCEOMF2Cnt=val;
 
               return 0;
@@ -1338,8 +1365,6 @@ case IOCTL_DMA_WRITE_USER:
 
               if (copy_from_user(&val, (int __user *)ioctl_param, sizeof(val)))
                   return -EFAULT;
-
-            //  pr_info("SET BCEOMMINOR = %d\n", val);   // 🔥 add this
 
              BCEOMF3Cnt=0;
 
@@ -1566,7 +1591,7 @@ case IOCTL_DMA_WRITE_USER:
             
             if (copy_to_user((int __user *)ioctl_param, &count, sizeof(count)))
                 return -EFAULT;
-            pr_info("Minor frame count = %d\n",count);
+            
             return 0;
         }
         
@@ -1577,7 +1602,7 @@ case IOCTL_DMA_WRITE_USER:
             
             if (copy_to_user((int __user *)ioctl_param, &count, sizeof(count)))
                 return -EFAULT;
-            pr_info("Minor frame count = %d\n",count);
+            
             return 0;
         }
         case IOCTL_CARD1_MOD3_GET_BCEOFMINCNT:
@@ -1587,7 +1612,6 @@ case IOCTL_DMA_WRITE_USER:
             
             if (copy_to_user((int __user *)ioctl_param, &count, sizeof(count)))
                 return -EFAULT;
-            pr_info("Minor frame count = %d\n",count);
             return 0;
         }
   }
@@ -1618,17 +1642,22 @@ irqreturn_t ISR(int irq, void *dev_id)
     {
       
       /****************** DMA INTERRUPTS *******************/
+      #if 1
       u32 DMACOMPLETE = ioread32(BaseDDC + (DMA_COMPLETE >> 1));
+      pr_info("DMA Complete Status = 0x%08x\n",DMACOMPLETE);
       if(DMACOMPLETE & 0x00000002)
       {
+      pr_info("Reg: 0x%08X\n",DMACOMPLETE);
       pr_info("DMA Read Complete Interrupt \n");
       }
       if(DMACOMPLETE & 0x00000004)
       {
+      pr_info("Reg: 0x%08X\n",DMACOMPLETE);
       pr_info("DMA Write Complete Interrupt \n");
       }
       
       iowrite32(0x00000008 , BaseDDC + (DMA_CLEAR >> 1));
+      #endif 
       /************** Module1 Interrupts **************/
       
       u16 BCINTR1 = ioread16(BaseDDC + (INT_STS_BC_MOD1 >> 1));
